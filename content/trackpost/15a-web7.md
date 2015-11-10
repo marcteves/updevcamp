@@ -31,16 +31,16 @@ Unlike with Flask, there's no setup needed for JS. You can simply create a javas
 
 Open up a blank file using your favorite text editor and save it as `scripts.js` (or whatever you want to name it). Type the following code in your file:
 
-```
+~~~javascript
 alert('Hello World!');
 console.log('Javascript FTW!');
-```
+~~~
 
 Now open `dummy.html` in your text editor and add the following code inside the `<body>` tag:
 
-```
+~~~html
  <script src="scripts.js"></script>
-```
+~~~
  
 This links your js script to your HTML document. If you open `dummy.html` in your browser, you'll find that a dialogue box has popped up with the message "Hello World!". This is what the `alert()` function does in javascript.
 
@@ -82,10 +82,10 @@ If you want to skip this section and get straight to the code, you can use `dom.
 
 To get started, we'll work on the `/pokemon` folder from the repository. Ignore the folders for now and just open `pokemon.html` in your text editor. Make sure that all the scripts in the `<head>` tag are commented out except for the following:
 
-```
+~~~html
 <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-```
+~~~
 
 We'll get into what these scripts do later. For now just ignore them.
 
@@ -93,43 +93,43 @@ Open `pokemon.html` in your browser. You should see a static page of a simulated
 
 Now let's try changing the elements without touching the HTML document. First create a new file in the `/js` folder (let's call this `dom.js`) and link this in the `<head>` tag:
 
-```
+~~~html
 <script language="javascript" type="text/javascript" src="js/dom.js"></script>
-```
+~~~
 
 In `dom.js`, we'll add the following code:
 
-```
+~~~javascript
 window.onload = init;
 
 function init(){
   // insert code here
 }
-```
+~~~
 
 We'll put most of our code in the `init` function. What this does is that it makes sure the browser loads ALL of the HTML elements before running our script. We want to make sure that the elements are *there* before we can even manipulate them.
 
 Now let's get to the magic. To manipulate elements, we need to be able to *get* them first. Add the following inside the `init()` function:
 
-```
+~~~javascript
 var opponent = document.getElementById('opponent-name');
-```
+~~~
 
 Here we're *getting* the HTML element with the id of `#opponent-name` and putting it in the variable `opponent` so that our script will be able to use it. `#opponent-name` is a `<div>` in the HTML file with the text "RATATA". Let's change that to something else:
 
-```
+~~~javascript
 opponent.innerHTML = "RATATATATATATATA";
-```
+~~~
 
 `innerHTML` is the text property of an HTML element. So now we're changing our opponent's name from "RATATA" to "RATATATATATATATA". Refresh the page in your browser and you'll see that, indeed, we are no longer fighting "RATATA" but "RATATATATATATATA"!
 
 Now let's try another trick.
 
-```
+~~~javascript
 var name = document.getElementById('pokemon-name');
 var last_name = document.createTextNode(' Pikapi');
 name.appendChild(last_name);
-```
+~~~
 
 There are several things going on here. We're *getting* the name of our pokemon (in the HTML file this is the `<div>` with the text "PIKACHU") and putting it in the `name` variable. Now the second line is a bit different. Instead of *getting* an element, we are now *creating* an element - specifically a TextNode with the string " Pikapi". *Yes, javascript just created an HTML element*. Pretty neat. But now we have to add this to our pokemon name so that instead of "PIKACHU" we'll have the pokemon "PIKACHU Pikapi". So now we use `appendChild()` to do that.
 
@@ -142,54 +142,54 @@ Naturally some people have already tackled this problem before and made a conven
 
 In our HTML file, we've already imported jQuery and jQuery UI so there's no need to set it up. You can find the files in the `/js` folder.
 
-```
+~~~html
 <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-```
+~~~
 
 Fire up another javascript file (or use the old one and just comment out our previous code - ALL of it) and add the following:
-```
+~~~javascript
 $(function(){
 });
-```
+~~~
 
 This is the jQuery equivalent of our `init` function from before. The `$` sign is shortcut for `jQuery`, so technically the code above is the same as this one:
 
-```
+~~~javascript
 jQuery.(function(){
 });
-```
+~~~
 
 ... but nobody codes like that because that's five more characters to type. `$` is just so much more convenient.
 
 Let's trying manipulating an element like we did before using vanilla javascript. Add the following inside the function:
 
-```
+~~~javascript
 var name = $('#pokemon-name');
 name.html('MIREYA');
-```
+~~~
 
 Huh, the code seems shorter now, doesn't it? But it's really the same thing as the one above. It's equivalent code in vanilla javascript is this:
 
-```
+~~~javascript
 var name = document.getElementById('pokemon-name');
 name.innerHTML = 'MIREYA';
-```
+~~~
 
 So to select an element, just use `$()` and add the id or class selector inside (so you can also have something like `$('.class')`). The `innerHTML` property can be changed using the `.html()` method. You can also get the current `innerHTML` by setting the parameters blank, like so:
 
-```
+~~~javascript
 console.log(name.html());
-```
+~~~
 
 Now refresh the page and you'll see that we've changed the text just like before - only this time with less characters! Yay for open source and faster coding!
 
 Let's now try manipulating other properties:
 
-```
+~~~javascript
 var img = $('#pokemon-sprite');
 img.attr('src', 'assets/back/squirtle.png');
-```
+~~~
 
 A general way of changing an element's attribute is by using the `attr()` method, which accepts two parameters: the attribute name, and the final value you want it to be in. So here we're changing our pokemon's sprite from pikachu to squirtle. Reload the page the see the results!
 
@@ -205,16 +205,16 @@ As stated from the readme of this repository: we will not be able to simulate th
 ## Menus
 First let's clean up the code a bit. In `pokemon.html` make sure that all the scripts in the `<head>` tag are commented out except for the following:
 
-```
+~~~html
 <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-```
+~~~
 
 Add another script:
 
-```
+~~~html
 <script language="javascript" type="text/javascript" src="js/pokebattle_base.js"></script>
-```
+~~~
 
 and open up `pokebattle_base.js` in your text editor. As you can see, I've already added some code for you so we can quickly get our hands dirty.
 
@@ -238,57 +238,57 @@ But we don't want to be able to do that by touching the HTML file, so set `displ
 
 Let's make the menu appear:
 
-```
+~~~javascript
 menu.main.css('display', 'block');
-```
+~~~
 
 This is vanilla javascript that sets the css from `display: none;` to `display: block;`. Try refreshing the page and you'll see that we now have a nice menu to play with.
 
 We'll need to switch frequently between the main menu and the fight menu, so let's create functions for that.
 
-```
+~~~javascript
 function switchToFight() {
   menu.main.hide(); 
   fight.main.show();
 }
-```
+~~~
 
 Here we used jQuery instead of vanilla js. The equivalent vanilla js code is this:
 
-```
+~~~javascript
 function switchToFight() {
   menu.main.css('display', 'none');
   fight.main.css('display', 'block');
 }
-```
+~~~
 
 ... but that's too many characters to type with, so we'll just go with jQuery on this one. :P It's also easier to read (it's almost like english!)
 
 Of course, we also need to be able to switch to the other menu so let's do that:
 
-```
+~~~javascript
 function switchToMenu(){
   fight.main.hide();
   menu.main.show();
 }
-```
+~~~
 
 Now let's actually use these functions using the `click()` event: 
 
-```
+~~~javascript
 menu.fight.click(function(){
   switchToFight();
 });
-```
+~~~
 This means that if we click the FIGHT button in the main menu, we'll switch to the fight menu.
 
 Conversely, if we click the CANCEL button in the fight menu, we should be able to switch to the main menu via:
 
-```
+~~~javascript
 fight.cancel.click(function(){
   switchToMenu();
 });
-```
+~~~
 
 Reload the page and try clicking the FIGHT button in the main menu, then the CANCEL button in the fight menu. You should now be able to easily switch between menus without reloading the page to get these changes to show up!
 
@@ -297,7 +297,7 @@ Now let's try actually attacking our opponent.
 
 We'll only be able to attack our opponent if we click a move image (one of the four purple boxes in the fight menu), so let's do that:
 
-```
+~~~javascript
 fight.move1.img.click(function(){
   playerAttack();
 
@@ -312,13 +312,13 @@ function playerAttack() {
   // pikachu attacks ratata
 }
 
-```
+~~~
 
 We have four moves so it would be quite redundant if we had to code the attack block four times, so let's just create a function called `attack()` in the `trainer` object.
 
 Let's go back up and add the following code to `trainer`:
 
-```
+~~~javascript
 // in trainer object
 move4: new move('SAND ATTACK', 25, 25, 1),
 
@@ -332,11 +332,11 @@ attack: function(victim, dmg){
   console.log(hpRemaining);
 },
 
-```
+~~~
 
 Here we'll set a parameter called `victim` which will later be filled out by our `opponent` object. Let's finish up the code by calling this in the `playerAttack()` function:
 
-```
+~~~javascript
 fight.move1.img.click(function(){
   playerAttack(opponent, trainer.move1.damage);
   trainer.move1.remaining--;
@@ -347,27 +347,27 @@ function playerAttack(opponent, damage) {
   trainer.attack(opponent, damage);
 }
 
-```
+~~~
 
 Reload the page and try attacking Ratata. Clearly he's taking damage, as we can see in the console logs. But there's no visual feedback! Let's remedy this by having the HP bar diminish for each hit. Let's go back to `trainer.attack()`.
 
 
 We'll have the HP bar diminish by shortening its width. Its original width is 100px so we can just use the percentage of HP left as the new width of the HP bar.
 
-```
+~~~javascript
 var hp = victim.hpRemaining/victim.hpTotal*100;
-```
+~~~
 
 Now that we have the new width of the HP bar, we'll *animate* it using jQuery. We'll use the `animate()` function, which accepts a list of properties that needs to be changed. We'll be putting in th *final state* that we want the HP bar to be in:
 
 
-```
+~~~javascript
 victim.hpBar.animate({'width': hp + 'px'});
-```
+~~~
 
 But it's not enough that we set the HP to a certain width. In Pokemon, the color changes as well depending on how much HP is left, so let's do that:
 
-```
+~~~javascript
 if(hp < 30){
   victim.hpBar.animate({'width': hp + 'px', 'background-color': '#f85828'}); // red
 }
@@ -380,12 +380,13 @@ else {
   victim.hpBar.animate({'width': hp + 'px', 'background-color': '#18c020'}); // green
 }
 },
-```
+~~~
 
 Whew! That's a lot of code. Just to check, here's what your code should look like at this point:
 
-`trainer.attack()`
-```
+`trainer.attack()`:
+
+~~~javascript
 var trainer = {
   ...
 
@@ -410,27 +411,27 @@ var trainer = {
     }
   },
 }
-```
+~~~
 
 
 `click()` event:
 
-```
+~~~javascript
 fight.move1.img.click(function(){
   playerAttack(opponent, trainer.move1.damage);
   trainer.move1.remaining--;
   fight.move1.pp.html(trainer.move1.remaining + '/' + trainer.move1.total);
 });
 
-```
+~~~
 
 and `playerAttack()`:
 
-```
+~~~javascript
 function playerAttack(opponent, damage) {
   trainer.attack(opponent, damage);
 }
-```
+~~~
 
 Reload the page and attack your opponent!
 
@@ -440,14 +441,14 @@ Let's add some more animations. Why don't we try changing the text in the dialog
 
 First we need to be able to select the element. By now you should be a pro at this so this is easy.
 
-```
+~~~javascript
 var dialogue = $('#battle-text');
-```
+~~~
 
 
 Let's change the dialogue in `playerAttack()`:
 
-```
+~~~javascript
 if(opponent.hpRemaining <= 0){
   dialogue.html(opponent.name.html() + ' fainted!');
 }
@@ -455,41 +456,41 @@ if(opponent.hpRemaining <= 0){
 else {
   dialogue.html(opponent.name.html() + ' received ' + damage + ' damage!');
 }
-```
+~~~
 
 Meh, pretty straightforward so this is probably boring for you. So why don't we have the opponent have a `hurt` animation whenever it's hit? We can use that using jQuery UI's built-in goodies: the `effect()` method.
 
 
 In the `opponent` object add:
 
-```
+~~~javascript
 hurtAnimation: function() {
   this.sprite.effect('shake');
 },
-```
+~~~
 
 While we're at it, let's make it disappear when its HP reaches zero. We'll use another one of jQuery's goodies called the `fadeOut()` method. You can set how fast the sprite disappears; I'll use `slow` so that we can savor the victory.
 
 
-```
+~~~javascript
 faintedAnimation: function() {
   this.sprite.fadeOut("slow");
 }
-```
+~~~
 
 Lastly, we'll have our pokemon do a victory pose when the opponent's HP reaches zero. (N-not because we're happy to make pokemon faint or anything! Let's not be sadists here.)
 
 There are additional sprite assets we can use, so let's just change the sprite image. Luckily we've already saved the path for this before in `trainer.altImg`.
 
-```
+~~~javascript
 victoryAnimation: function(){
   this.sprite.attr('src', this.altImg);
 }
-```
+~~~
 
 Call these new functions in our `playerAttack()`, like so:
 
-```
+~~~javascript
 function playerAttack(opponent, damage) {
   opponent.hurtAnimation();
   trainer.attack(opponent, damage);
@@ -505,11 +506,11 @@ function playerAttack(opponent, damage) {
     dialogue.html(opponent.name.html() + ' received ' + damage + ' damage!');
   }
 }
-```
+~~~
 
 And lastly, let's wrap this up by doing the other moves as well.
 
-```
+~~~javascript
 fight.move2.img.click(function(){
   playerAttack(opponent, trainer.move2.damage);
   trainer.move2.remaining--;
@@ -527,7 +528,7 @@ fight.move4.img.click(function(){
   trainer.move4.remaining--;
   fight.move4.pp.html(trainer.move4.remaining + '/' + trainer.move4.total);
 });
-```
+~~~
 
 Reload the page. Now you can mercilessly attack a Ratata at your will, and even have your pokemon do a victory pose! Good job!
 
