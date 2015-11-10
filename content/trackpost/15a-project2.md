@@ -66,6 +66,26 @@ Seems to be an empty file. An \__init__.py just defines a python folder as a pac
 
 This file seems more interesting. It's the name of our app and it seems to be setting up calling some initialization functions as well as setting up our `router`.
 
+Notice though our config function:
+
+~~~python
+app.config.update(
+    DEBUG      =  True,
+    DATABASE   =  '/tmp/minitwit.db',
+    SECRET_KEY =  'a unique key'
+)
+~~~
+
+Note that this sets our database to the path `/tmp/minitwit.db`. If you are on __windows__, you would need to edit this path to be a relative one:
+
+~~~python
+app.config.update(
+    DEBUG      =  True,
+    DATABASE   =  'minitwit.db',
+    SECRET_KEY =  'a unique key'
+)
+~~~
+
 Turns out `csitwit.py` is our app's main entry point, calling everything our app needs to start. Let's go and take a look at `router` next.
 
 ## router.py
@@ -309,6 +329,12 @@ python -m flask -a csitwit run
 ~~~
 
 Note that we can close it with [Ctrl]+[C] or [Cmd]+[C]. Note that if you face an error in the app, a manual restart of the server is required (so make sure to close and reopen the server if you face an error!
+
+Another way to run the server is to pass in the `--debug` flag. This allows us our server to automatically restart in case of an error:
+
+~~~bash
+python -m flask -a csitwit --debug run
+~~~
 
 ## register
 
