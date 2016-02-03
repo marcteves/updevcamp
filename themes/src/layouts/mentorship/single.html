@@ -1,0 +1,34 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+{{ $baseUrl := .Site.BaseURL }}
+<div class="content container">
+  <article class="post">
+    <h1 class="post-title">
+      {{ .Title }}
+    </h1>
+    {{ .Content }}
+    <h1>
+      Mentors
+    </h1>
+    <div class="mentors-gallery">
+      {{ range .Params.mentors }}
+        <div class="gallery-item">
+          {{ $author := index $.Site.Data.authors . }}
+          {{ if $author.image.profile }}
+            <img src="/media/mentors/{{ $author.image.profile }}"/>
+          {{ end }}
+          <div class="details">
+            {{ $author.name }}
+            <p class="article">
+              {{ range $author.skills }}
+                {{ . }}
+              {{ end }}
+            </p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </article>
+</div>
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
