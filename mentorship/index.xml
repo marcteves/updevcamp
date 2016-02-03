@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mentorships on UP CSI Devcamp</title>
+    <link>/mentorship/</link>
+    <description>Recent content in Mentorships on UP CSI Devcamp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Feb 2016 12:26:05 +0800</lastBuildDate>
+    <atom:link href="/mentorship/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DevCamp [Mentorship]</title>
+      <link>/mentorship/fifteen-b/</link>
+      <pubDate>Wed, 03 Feb 2016 12:26:05 +0800</pubDate>
+      
+      <guid>/mentorship/fifteen-b/</guid>
+      <description>&lt;p&gt;Spend a semester writing code and learning more about software and product development! Accepted students work on a project (of their own choosing) paired with a mentor, becoming a part of the larger development community.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;FAQ:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;How does it work?&lt;/p&gt;
+
+&lt;p&gt;Work on a project/Increase your skills in a field your interested in like web, mobile, or game development by working with a mentor that specializes on that field.&lt;/p&gt;
+
+&lt;p&gt;The project can be anything, from an idea or project you have to an open source project you want to contribute on.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Do I need to be a part of CSI/be taking up Computer Science?&lt;/p&gt;
+
+&lt;p&gt;No, we are open to everyone!&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;I don&amp;rsquo;t have a project idea, can I still join?&lt;/p&gt;
+
+&lt;p&gt;Yes, though we highly encourage you to have one! You can reach out to us and we&amp;rsquo;ll help you generate ideas (and note that you can still change/pivot your idea as we go through the camp)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Where/When does it occur?&lt;/p&gt;
+
+&lt;p&gt;The 1-on-1 mentorship setup allows us to hold the devcamp without a centralized location/time, so you are free to work with your mentor on terms that works for both of you!&lt;/p&gt;
+
+&lt;p&gt;However, we do sometimes hold &lt;em&gt;common sessions&lt;/em&gt;, where we discuss essential things that would be common to whatever field you are studying. They are typically held in discussion rooms and will depend on the participants&amp;rsquo; availability.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;How do I get paired with a mentor? What if more than one camper picks the same mentor?&lt;/p&gt;
+
+&lt;p&gt;The pairing will be done depending on the interest, specialty, and schedule of the mentor/mentee pair. To ensure the quality of mentorship, a mentor can only have one mentee.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

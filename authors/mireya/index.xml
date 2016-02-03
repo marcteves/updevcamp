@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mireya on UP CSI Devcamp</title>
+    <link>/authors/mireya/</link>
+    <description>Recent content in Mireya on UP CSI Devcamp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Nov 2015 04:11:30 +0800</lastBuildDate>
+    <atom:link href="/authors/mireya/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Javascript</title>
+      <link>/trackpost/15a-web7/</link>
+      <pubDate>Mon, 09 Nov 2015 04:11:30 +0800</pubDate>
+      
+      <guid>/trackpost/15a-web7/</guid>
+      <description>
+
+&lt;h1 id=&#34;background:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;Javascript is a fun language. It&amp;rsquo;s powerful, versatile, but sometimes misunderstood. It&amp;rsquo; s an &lt;strong&gt;object-oriented dynamic language&lt;/strong&gt;, and it&amp;rsquo;s commonly used for making web applications interactive (although js frameworks have become popular recently, such as AngularJS and EmberJS).&lt;/p&gt;
+
+&lt;p&gt;Check out &lt;a href=&#34;http://hereistoday.com/&#34;&gt;this&lt;/a&gt; website and notice how it&amp;rsquo;s not just some static HTML document. You can click on the timeline (the colored rectangles) and the website reacts and changes depending on your actions &lt;em&gt;without refreshing the page&lt;/em&gt;. &lt;strong&gt;That&lt;/strong&gt; is the power of javascript.&lt;/p&gt;
+
+&lt;p&gt;Some brief history: javascript was created by this engineer from Netscape called Brendan Eich. It was released in 1996. It was originally &lt;em&gt;Mocha&lt;/em&gt;, then it was called &lt;em&gt;LiveScript&lt;/em&gt;, and eventually it was named &lt;em&gt;Javascript&lt;/em&gt; when Netscape and Sun got together. It was supposed to be a complementary scripting language for Java, but it has evolved a lot on its own as a language. And despite the name, js doesn&amp;rsquo;t really have much to do with the Java language.&lt;/p&gt;
+
+&lt;p&gt;So don&amp;rsquo;t worry; if you don&amp;rsquo;t know how to code in Java, you&amp;rsquo;ll be fine.&lt;/p&gt;
+
+&lt;h1 id=&#34;getting-started:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Getting Started&lt;/h1&gt;
+
+&lt;p&gt;Some knowledge of HTML is needed for this tutorial. If you&amp;rsquo;re not familiar with how HTML works, check out the HTML tutorial &lt;a href=&#34;http://updevcamp.com/trackpost/15a-web1/&#34;&gt;here&lt;/a&gt; then come back to this later. Grab a few snacks while you&amp;rsquo;re at it; we&amp;rsquo;re in for a pretty long ride and we don&amp;rsquo;t want you to work on an empty stomach!&lt;/p&gt;
+
+&lt;p&gt;You good to go? Are you comfortable in your spot? Great! Let&amp;rsquo;s get started.&lt;/p&gt;
+
+&lt;p&gt;First, clone this &lt;a href=&#34;https://github.com/mpandres/pokemon-js&#34;&gt;repository&lt;/a&gt; and check out the readme. This is the same repository we used for the DevCamp session last November 7. If you cloned this before, update it by running &lt;code&gt;git pull&lt;/code&gt; from your local repository. Comments have been added to the code since then to make things easier to follow.&lt;/p&gt;
+
+&lt;h1 id=&#34;javascript-as-a-language:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Javascript as a Language&lt;/h1&gt;
+
+&lt;h2 id=&#34;hello-world:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Hello World!&lt;/h2&gt;
+
+&lt;p&gt;First we&amp;rsquo;ll take a look at the &lt;code&gt;basic javascript&lt;/code&gt; folder from the repository.&lt;/p&gt;
+
+&lt;p&gt;Unlike with Flask, there&amp;rsquo;s no setup needed for JS. You can simply create a javascript file by adding the &lt;code&gt;.js&lt;/code&gt; extension. Let&amp;rsquo;s make one now.&lt;/p&gt;
+
+&lt;p&gt;Open up a blank file using your favorite text editor and save it as &lt;code&gt;scripts.js&lt;/code&gt; (or whatever you want to name it). Type the following code in your file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;alert(&#39;Hello World!&#39;);
+console.log(&#39;Javascript FTW!&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now open &lt;code&gt;dummy.html&lt;/code&gt; in your text editor and add the following code inside the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt; &amp;lt;script src=&amp;quot;scripts.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This links your js script to your HTML document. If you open &lt;code&gt;dummy.html&lt;/code&gt; in your browser, you&amp;rsquo;ll find that a dialogue box has popped up with the message &amp;ldquo;Hello World!&amp;rdquo;. This is what the &lt;code&gt;alert()&lt;/code&gt; function does in javascript.&lt;/p&gt;
+
+&lt;p&gt;Close the dialogue box. You&amp;rsquo;ll find that the document is completely blank - as expected, since we left the body without any HTML elements. But where did our &amp;ldquo;Javascript FTW!&amp;rdquo; message go? Well now let&amp;rsquo;s try checking out the &lt;code&gt;console&lt;/code&gt;. Right-click and select &lt;code&gt;Inspect Element&lt;/code&gt;, then go to the &lt;code&gt;console&lt;/code&gt; tab. You should now see the &amp;ldquo;Javascript FTW!&amp;rdquo; message printed.&lt;/p&gt;
+
+&lt;p&gt;Pretty neat; now we&amp;rsquo;ll be able to print messages without affecting what&amp;rsquo;s shown in our HTML document or having annoying dialogue boxes popping up using the &lt;code&gt;console.log()&lt;/code&gt; function. This is useful for inspecting data, so keep this function in mind when you&amp;rsquo;re trying to debug your code.&lt;/p&gt;
+
+&lt;p&gt;Sweet, so now we&amp;rsquo;ve done the obligatory &lt;code&gt;Hello World&lt;/code&gt; example customary for programming languages. Pat yourself in the back and have a bite of that snack you took.&lt;/p&gt;
+
+&lt;h2 id=&#34;back-to-basics:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Back to Basics&lt;/h2&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s look at &lt;code&gt;backtobasics.js&lt;/code&gt; prepared by Marc Teves. It&amp;rsquo;s a tutorial on the basic syntax of javascript. Link this to your HTML file and refresh the page, then check the console tab. The code is pretty straightforward and is sufficiently explained through the comments. Try to follow the code and familiarize yourself with the syntax - in many ways, it&amp;rsquo;s similar to other languages like C.&lt;/p&gt;
+
+&lt;p&gt;As a quick recap from last session, here are some important concepts to know about how javascript works:
+* All number arithmetic is handled as floating point arithmetic.
+* &lt;code&gt;null&lt;/code&gt; is a special javascript literal which means &lt;em&gt;empty&lt;/em&gt; i.e. no object value is present. Null means there is a non-value.
+* &lt;code&gt;undefined&lt;/code&gt;, on the other hand, means that the value is uninitialized. It means that no value has been assigned yet.
+* When we add a string to the equation, the &lt;code&gt;+&lt;/code&gt; operator becomes a concatenator.
+* Javascript arrays can have elements of different types. (e.g. &lt;code&gt;array = [1, 2, &amp;quot;abcd&amp;quot;, 8.91]&lt;/code&gt;).
+* Objects can have &lt;code&gt;attributes&lt;/code&gt; and &lt;code&gt;methods&lt;/code&gt; (functions). You can initialize an object from the get go, or use a &lt;code&gt;constructor&lt;/code&gt;, which are templates for an object.
+* Functions are objects too! This means you can pass them as a parameter to other functions. Pretty cool.&lt;/p&gt;
+
+&lt;p&gt;This is a lot to take in, but the &lt;code&gt;backtobasics.js&lt;/code&gt; file goes through all of these one by one in detail. Go through that, then come back once you&amp;rsquo;re done.&lt;/p&gt;
+
+&lt;p&gt;As an additonal reference, check out the MDN&amp;rsquo;s &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript&#34;&gt;js tutorial&lt;/a&gt;, which gives a quick overview of how javascript works. It&amp;rsquo;s a bit lengthy, so I suggest you go through this at another time. :)&lt;/p&gt;
+
+&lt;h1 id=&#34;dom-manipulation:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;DOM Manipulation&lt;/h1&gt;
+
+&lt;p&gt;Whew! That was a lot to take in. Still hanging in there? Why don&amp;rsquo;t you rest for a minute, refill your drink, and grab some more snacks before we proceed. Check out this &lt;a href=&#34;https://www.youtube.com/watch?v=Q9c8FJ19yVE&amp;amp;list=PLASUEILIKieb8Jpwcri6fQphSw4wPavMc&amp;amp;index=26&#34;&gt;penguin video&lt;/a&gt; while you&amp;rsquo;re at it.&lt;/p&gt;
+
+&lt;p&gt;All done? Great! Now let&amp;rsquo;s get to the fun part.&lt;/p&gt;
+
+&lt;p&gt;So far we&amp;rsquo;ve done some pretty basic stuff - mostly learning how to code in javascript. But we haven&amp;rsquo;t actually touched any of the &lt;em&gt;magic&lt;/em&gt; javascript offers us, so let&amp;rsquo;s do that by creating our own Pokemon game!&lt;/p&gt;
+
+&lt;h2 id=&#34;nothing-wrong-with-vanilla:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Nothing Wrong With Vanilla&lt;/h2&gt;
+
+&lt;p&gt;One of the most fun features of javascript is that it allows us to manipulate the DOM, or the Document Object Model. When we have an HTML file, we can represent it as a raw text file, or as what we see here in our browsers. But another way of representing HTML files (and also XML files) is through the DOM, which provides a structured (object-oriented) way for other programs and scripts to access and manipulate elements in the document.&lt;/p&gt;
+
+&lt;p&gt;That is, using javascript we can access certain HTML elements through the DOM and modify them without having to reload the page every time. How cool is that?&lt;/p&gt;
+
+&lt;p&gt;If you want to skip this section and get straight to the code, you can use &lt;code&gt;dom.js&lt;/code&gt; from the repository as a reference.&lt;/p&gt;
+
+&lt;p&gt;To get started, we&amp;rsquo;ll work on the &lt;code&gt;/pokemon&lt;/code&gt; folder from the repository. Ignore the folders for now and just open &lt;code&gt;pokemon.html&lt;/code&gt; in your text editor. Make sure that all the scripts in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag are commented out except for the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-ui/jquery-ui.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll get into what these scripts do later. For now just ignore them.&lt;/p&gt;
+
+&lt;p&gt;Open &lt;code&gt;pokemon.html&lt;/code&gt; in your browser. You should see a static page of a simulated pokemon battle with Pikachu as your pokemon and Ratata as your opponent. The bottom screen should only have the green pokeball background and should be empty of buttons. Get yourself familiar with the elements of the page before we proceed. If things are confusing, right-click and select &lt;code&gt;Inspect Element&lt;/code&gt; then hover over each line, which will highlight the corresponding element in the browser.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s try changing the elements without touching the HTML document. First create a new file in the &lt;code&gt;/js&lt;/code&gt; folder (let&amp;rsquo;s call this &lt;code&gt;dom.js&lt;/code&gt;) and link this in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/dom.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In &lt;code&gt;dom.js&lt;/code&gt;, we&amp;rsquo;ll add the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;window.onload = init;
+
+function init(){
+  // insert code here
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll put most of our code in the &lt;code&gt;init&lt;/code&gt; function. What this does is that it makes sure the browser loads ALL of the HTML elements before running our script. We want to make sure that the elements are &lt;em&gt;there&lt;/em&gt; before we can even manipulate them.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s get to the magic. To manipulate elements, we need to be able to &lt;em&gt;get&lt;/em&gt; them first. Add the following inside the &lt;code&gt;init()&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var opponent = document.getElementById(&#39;opponent-name&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we&amp;rsquo;re &lt;em&gt;getting&lt;/em&gt; the HTML element with the id of &lt;code&gt;#opponent-name&lt;/code&gt; and putting it in the variable &lt;code&gt;opponent&lt;/code&gt; so that our script will be able to use it. &lt;code&gt;#opponent-name&lt;/code&gt; is a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; in the HTML file with the text &amp;ldquo;RATATA&amp;rdquo;. Let&amp;rsquo;s change that to something else:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;opponent.innerHTML = &amp;quot;RATATATATATATATA&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;innerHTML&lt;/code&gt; is the text property of an HTML element. So now we&amp;rsquo;re changing our opponent&amp;rsquo;s name from &amp;ldquo;RATATA&amp;rdquo; to &amp;ldquo;RATATATATATATATA&amp;rdquo;. Refresh the page in your browser and you&amp;rsquo;ll see that, indeed, we are no longer fighting &amp;ldquo;RATATA&amp;rdquo; but &amp;ldquo;RATATATATATATATA&amp;rdquo;!&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s try another trick.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var name = document.getElementById(&#39;pokemon-name&#39;);
+var last_name = document.createTextNode(&#39; Pikapi&#39;);
+name.appendChild(last_name);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are several things going on here. We&amp;rsquo;re &lt;em&gt;getting&lt;/em&gt; the name of our pokemon (in the HTML file this is the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; with the text &amp;ldquo;PIKACHU&amp;rdquo;) and putting it in the &lt;code&gt;name&lt;/code&gt; variable. Now the second line is a bit different. Instead of &lt;em&gt;getting&lt;/em&gt; an element, we are now &lt;em&gt;creating&lt;/em&gt; an element - specifically a TextNode with the string &amp;ldquo; Pikapi&amp;rdquo;. &lt;em&gt;Yes, javascript just created an HTML element&lt;/em&gt;. Pretty neat. But now we have to add this to our pokemon name so that instead of &amp;ldquo;PIKACHU&amp;rdquo; we&amp;rsquo;ll have the pokemon &amp;ldquo;PIKACHU Pikapi&amp;rdquo;. So now we use &lt;code&gt;appendChild()&lt;/code&gt; to do that.&lt;/p&gt;
+
+&lt;p&gt;Refresh the page again and voila! We are now having a fight between &amp;ldquo;PIKACHU Pikapi&amp;rdquo; and &amp;ldquo;RATATATATATATATA&amp;rdquo;!&lt;/p&gt;
+
+&lt;h2 id=&#34;jquery-magic:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;jQuery Magic&lt;/h2&gt;
+
+&lt;p&gt;We&amp;rsquo;ve done some interesting stuff so far with vanilla javascript. We&amp;rsquo;re able to select elements from an HTML file, create our &lt;em&gt;own&lt;/em&gt; HTML elements, and manipulate them. But typing all these long methods will get pretty stale (imagine typing &lt;code&gt;document.getElementById()&lt;/code&gt; over and over and over and over&amp;hellip; &lt;em&gt;ugh&lt;/em&gt;). Is there some way to make coding easier?&lt;/p&gt;
+
+&lt;p&gt;Naturally some people have already tackled this problem before and made a convenient solution for us, and that is jQuery! jQuery is basically a javascript library; you can think of it as third-party javascript file that we&amp;rsquo;ll import into our HTML document. It has some shortcut methods and additional neat goodies - mostly functions that a lot of people use so that there&amp;rsquo;s no need to reinvent the wheel. Why code something when it&amp;rsquo;s already been done before by someone else and you can use it for free?&lt;/p&gt;
+
+&lt;p&gt;In our HTML file, we&amp;rsquo;ve already imported jQuery and jQuery UI so there&amp;rsquo;s no need to set it up. You can find the files in the &lt;code&gt;/js&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-ui/jquery-ui.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fire up another javascript file (or use the old one and just comment out our previous code - ALL of it) and add the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$(function(){
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the jQuery equivalent of our &lt;code&gt;init&lt;/code&gt; function from before. The &lt;code&gt;$&lt;/code&gt; sign is shortcut for &lt;code&gt;jQuery&lt;/code&gt;, so technically the code above is the same as this one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;jQuery.(function(){
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; but nobody codes like that because that&amp;rsquo;s five more characters to type. &lt;code&gt;$&lt;/code&gt; is just so much more convenient.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s trying manipulating an element like we did before using vanilla javascript. Add the following inside the function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var name = $(&#39;#pokemon-name&#39;);
+name.html(&#39;MIREYA&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Huh, the code seems shorter now, doesn&amp;rsquo;t it? But it&amp;rsquo;s really the same thing as the one above. It&amp;rsquo;s equivalent code in vanilla javascript is this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var name = document.getElementById(&#39;pokemon-name&#39;);
+name.innerHTML = &#39;MIREYA&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So to select an element, just use &lt;code&gt;$()&lt;/code&gt; and add the id or class selector inside (so you can also have something like &lt;code&gt;$(&#39;.class&#39;)&lt;/code&gt;). The &lt;code&gt;innerHTML&lt;/code&gt; property can be changed using the &lt;code&gt;.html()&lt;/code&gt; method. You can also get the current &lt;code&gt;innerHTML&lt;/code&gt; by setting the parameters blank, like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;console.log(name.html());
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now refresh the page and you&amp;rsquo;ll see that we&amp;rsquo;ve changed the text just like before - only this time with less characters! Yay for open source and faster coding!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s now try manipulating other properties:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var img = $(&#39;#pokemon-sprite&#39;);
+img.attr(&#39;src&#39;, &#39;assets/back/squirtle.png&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A general way of changing an element&amp;rsquo;s attribute is by using the &lt;code&gt;attr()&lt;/code&gt; method, which accepts two parameters: the attribute name, and the final value you want it to be in. So here we&amp;rsquo;re changing our pokemon&amp;rsquo;s sprite from pikachu to squirtle. Reload the page the see the results!&lt;/p&gt;
+
+&lt;h1 id=&#34;pokemon-game:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Pokemon Game&lt;/h1&gt;
+
+&lt;p&gt;We&amp;rsquo;ve gone through a lot, but now we&amp;rsquo;re ready to make the actual game! Yay! If you made it this far, smile, eat something you like, give yourself a pat on the back and say, &amp;ldquo;Good job, self!&amp;rdquo; You deserve it!&lt;/p&gt;
+
+&lt;p&gt;This is the final sprint. For this tutorial, we&amp;rsquo;ll make our pokemon attack the opponent and add visual feedback. Our opponent will shake whenever it is attacked, it&amp;rsquo;s HP bar will diminish and change in color for every damage it takes, and the sprite will eventually vanish once the opponent&amp;rsquo;s HP reaches zero. We&amp;rsquo;ll also have our pokemon do a victory pose for a job well done.&lt;/p&gt;
+
+&lt;p&gt;If you want to skip this section and get straight to the code, you can use &lt;code&gt;pokebattle.js&lt;/code&gt; as a reference. Comments have been added to explain what&amp;rsquo;s going on so it should be easy to follow.&lt;/p&gt;
+
+&lt;p&gt;As stated from the readme of this repository: we will not be able to simulate the actual game wherein both you and the opponent take turns in attacking. This requires some gamedev concepts which are outside the scope of this tutorial, and will be left as an exercise to the interested coder. If you&amp;rsquo;re curious, you can shoot me a message on how this can be done. I&amp;rsquo;ve also provided additional assets (from spriters-resource) should you want to take this a bit further.&lt;/p&gt;
+
+&lt;h2 id=&#34;menus:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Menus&lt;/h2&gt;
+
+&lt;p&gt;First let&amp;rsquo;s clean up the code a bit. In &lt;code&gt;pokemon.html&lt;/code&gt; make sure that all the scripts in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag are commented out except for the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-ui/jquery-ui.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add another script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot; type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/pokebattle_base.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and open up &lt;code&gt;pokebattle_base.js&lt;/code&gt; in your text editor. As you can see, I&amp;rsquo;ve already added some code for you so we can quickly get our hands dirty.&lt;/p&gt;
+
+&lt;p&gt;A quick run through of what we have so far:
+* We&amp;rsquo;ve got two constructors: &lt;code&gt;move&lt;/code&gt; and &lt;code&gt;moveObject&lt;/code&gt;. &lt;code&gt;move&lt;/code&gt; refers to the logical moves of a pokemon, while &lt;code&gt;moveObject&lt;/code&gt; refers to the actual HTML elements representing those moves. I made these as constructors because I need to create several of these objects (since a pokemon has 4 moves).
+* Each attribute in the &lt;code&gt;trainer&lt;/code&gt; object refers to the corresponding element in the html file. So &lt;code&gt;trainer.name&lt;/code&gt; refers to the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; with &amp;ldquo;PIKACHU&amp;rdquo; and &lt;code&gt;trainer.hpBar&lt;/code&gt; refers to the green HP bar.
+* &lt;code&gt;img&lt;/code&gt; and &lt;code&gt;altImg&lt;/code&gt; are shortcut links to the pokemon assets.
+* Notice that we used the &lt;code&gt;move&lt;/code&gt; constructor in the &lt;code&gt;trainer&lt;/code&gt; object as well.
+* &lt;code&gt;opponent&lt;/code&gt; object is the same as &lt;code&gt;trainer&lt;/code&gt;, except that &lt;code&gt;hpRemaining&lt;/code&gt; and &lt;code&gt;hpTotal&lt;/code&gt; are numbers instead of references to HTML elements, since we don&amp;rsquo;t actually see the opponent&amp;rsquo;s HP in the game except for the HP bar.
+* &lt;code&gt;menu&lt;/code&gt; refers to the main menu, which consists of a &lt;code&gt;fight&lt;/code&gt;, &lt;code&gt;bag&lt;/code&gt;, &lt;code&gt;pokemon&lt;/code&gt;, and &lt;code&gt;cancel&lt;/code&gt; button.
+* &lt;code&gt;fight&lt;/code&gt; refers to the fight menu, which consists of 4 buttons for each pokemon move (here we used the &lt;code&gt;moveObject&lt;/code&gt; constructor), and 1 &lt;code&gt;cancel&lt;/code&gt; button.
+* For both objects above, &lt;code&gt;main&lt;/code&gt; refers to the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; enclosing the buttons for that menu.&lt;/p&gt;
+
+&lt;p&gt;Take your time to familiarize yourself with the objects first. There&amp;rsquo;a a lot to take in.&lt;/p&gt;
+
+&lt;p&gt;All done? Great!&lt;/p&gt;
+
+&lt;p&gt;Now if you look at the page in your browser, you&amp;rsquo;ll notice that although we have a main menu and fight menu, they are nowhere to be seen! That&amp;rsquo;s because both of them are set to &lt;code&gt;display: none;&lt;/code&gt;. Try commenting this out from &lt;code&gt;.menu&lt;/code&gt; in &lt;code&gt;style.css&lt;/code&gt;, or you can just uncheck the property using &lt;code&gt;Inspect Element&lt;/code&gt;. Now we&amp;rsquo;re able to see the menu!&lt;/p&gt;
+
+&lt;p&gt;But we don&amp;rsquo;t want to be able to do that by touching the HTML file, so set &lt;code&gt;display&lt;/code&gt; back to &lt;code&gt;none&lt;/code&gt; and let&amp;rsquo;s try manipulating &lt;code&gt;.menu&lt;/code&gt; with javascript instead.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s make the menu appear:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;menu.main.css(&#39;display&#39;, &#39;block&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is vanilla javascript that sets the css from &lt;code&gt;display: none;&lt;/code&gt; to &lt;code&gt;display: block;&lt;/code&gt;. Try refreshing the page and you&amp;rsquo;ll see that we now have a nice menu to play with.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll need to switch frequently between the main menu and the fight menu, so let&amp;rsquo;s create functions for that.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function switchToFight() {
+  menu.main.hide(); 
+  fight.main.show();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we used jQuery instead of vanilla js. The equivalent vanilla js code is this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function switchToFight() {
+  menu.main.css(&#39;display&#39;, &#39;none&#39;);
+  fight.main.css(&#39;display&#39;, &#39;block&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; but that&amp;rsquo;s too many characters to type with, so we&amp;rsquo;ll just go with jQuery on this one. :P It&amp;rsquo;s also easier to read (it&amp;rsquo;s almost like english!)&lt;/p&gt;
+
+&lt;p&gt;Of course, we also need to be able to switch to the other menu so let&amp;rsquo;s do that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function switchToMenu(){
+  fight.main.hide();
+  menu.main.show();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s actually use these functions using the &lt;code&gt;click()&lt;/code&gt; event:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;menu.fight.click(function(){
+  switchToFight();
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This means that if we click the FIGHT button in the main menu, we&amp;rsquo;ll switch to the fight menu.&lt;/p&gt;
+
+&lt;p&gt;Conversely, if we click the CANCEL button in the fight menu, we should be able to switch to the main menu via:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;fight.cancel.click(function(){
+  switchToMenu();
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reload the page and try clicking the FIGHT button in the main menu, then the CANCEL button in the fight menu. You should now be able to easily switch between menus without reloading the page to get these changes to show up!&lt;/p&gt;
+
+&lt;h2 id=&#34;pikachu-used-tackle:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Pikachu used TACKLE!&lt;/h2&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s try actually attacking our opponent.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll only be able to attack our opponent if we click a move image (one of the four purple boxes in the fight menu), so let&amp;rsquo;s do that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;fight.move1.img.click(function(){
+  playerAttack();
+
+  // decreases logical pp of the move
+  trainer.move1.remaining--;
+  
+  // manipulates the html element to show the decrese in pp
+  fight.move1.pp.html(trainer.move1.remaining + &#39;/&#39; + trainer.move1.total);
+});
+
+function playerAttack() {
+  // pikachu attacks ratata
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We have four moves so it would be quite redundant if we had to code the attack block four times, so let&amp;rsquo;s just create a function called &lt;code&gt;attack()&lt;/code&gt; in the &lt;code&gt;trainer&lt;/code&gt; object.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s go back up and add the following code to &lt;code&gt;trainer&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// in trainer object
+move4: new move(&#39;SAND ATTACK&#39;, 25, 25, 1),
+
+// trainer attacks the victim with the specified damage
+attack: function(victim, dmg){
+  victim.hpRemaining = victim.hpRemaining - dmg;
+  if(victim.hpRemaining &amp;lt; 0){
+    victim.hpRemaining = 0;
+  }
+
+  console.log(hpRemaining);
+},
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we&amp;rsquo;ll set a parameter called &lt;code&gt;victim&lt;/code&gt; which will later be filled out by our &lt;code&gt;opponent&lt;/code&gt; object. Let&amp;rsquo;s finish up the code by calling this in the &lt;code&gt;playerAttack()&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;fight.move1.img.click(function(){
+  playerAttack(opponent, trainer.move1.damage);
+  trainer.move1.remaining--;
+  fight.move1.pp.html(trainer.move1.remaining + &#39;/&#39; + trainer.move1.total);
+});
+
+function playerAttack(opponent, damage) {
+  trainer.attack(opponent, damage);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reload the page and try attacking Ratata. Clearly he&amp;rsquo;s taking damage, as we can see in the console logs. But there&amp;rsquo;s no visual feedback! Let&amp;rsquo;s remedy this by having the HP bar diminish for each hit. Let&amp;rsquo;s go back to &lt;code&gt;trainer.attack()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll have the HP bar diminish by shortening its width. Its original width is 100px so we can just use the percentage of HP left as the new width of the HP bar.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var hp = victim.hpRemaining/victim.hpTotal*100;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that we have the new width of the HP bar, we&amp;rsquo;ll &lt;em&gt;animate&lt;/em&gt; it using jQuery. We&amp;rsquo;ll use the &lt;code&gt;animate()&lt;/code&gt; function, which accepts a list of properties that needs to be changed. We&amp;rsquo;ll be putting in th &lt;em&gt;final state&lt;/em&gt; that we want the HP bar to be in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But it&amp;rsquo;s not enough that we set the HP to a certain width. In Pokemon, the color changes as well depending on how much HP is left, so let&amp;rsquo;s do that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(hp &amp;lt; 30){
+  victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;, &#39;background-color&#39;: &#39;#f85828&#39;}); // red
+}
+
+else if(hp &amp;lt; 60){
+  victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;, &#39;background-color&#39;: &#39;#f8b000&#39;}); // orange
+}
+
+else {
+  victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;, &#39;background-color&#39;: &#39;#18c020&#39;}); // green
+}
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Whew! That&amp;rsquo;s a lot of code. Just to check, here&amp;rsquo;s what your code should look like at this point:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;trainer.attack()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var trainer = {
+  ...
+
+  attack: function(victim, dmg){
+    victim.hpRemaining = victim.hpRemaining - dmg;
+    if(victim.hpRemaining &amp;lt; 0){
+      victim.hpRemaining = 0;
+    }
+
+    var hp = victim.hpRemaining/victim.hpTotal*100;
+
+    if(hp &amp;lt; 30){
+      victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;, &#39;background-color&#39;: &#39;#f85828&#39;}); // red
+    }
+
+    else if(hp &amp;lt; 60){
+      victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;, &#39;background-color&#39;: &#39;#f8b000&#39;}); // orange
+    }
+
+    else {
+      victim.hpBar.animate({&#39;width&#39;: hp + &#39;px&#39;, &#39;background-color&#39;: &#39;#18c020&#39;}); // red
+    }
+  },
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;click()&lt;/code&gt; event:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;fight.move1.img.click(function(){
+  playerAttack(opponent, trainer.move1.damage);
+  trainer.move1.remaining--;
+  fight.move1.pp.html(trainer.move1.remaining + &#39;/&#39; + trainer.move1.total);
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and &lt;code&gt;playerAttack()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function playerAttack(opponent, damage) {
+  trainer.attack(opponent, damage);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reload the page and attack your opponent!&lt;/p&gt;
+
+&lt;h2 id=&#34;it-s-super-effective:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;&amp;hellip; It&amp;rsquo;s super effective!&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s add some more animations. Why don&amp;rsquo;t we try changing the text in the dialogue box?&lt;/p&gt;
+
+&lt;p&gt;First we need to be able to select the element. By now you should be a pro at this so this is easy.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var dialogue = $(&#39;#battle-text&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s change the dialogue in &lt;code&gt;playerAttack()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(opponent.hpRemaining &amp;lt;= 0){
+  dialogue.html(opponent.name.html() + &#39; fainted!&#39;);
+}
+
+else {
+  dialogue.html(opponent.name.html() + &#39; received &#39; + damage + &#39; damage!&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Meh, pretty straightforward so this is probably boring for you. So why don&amp;rsquo;t we have the opponent have a &lt;code&gt;hurt&lt;/code&gt; animation whenever it&amp;rsquo;s hit? We can use that using jQuery UI&amp;rsquo;s built-in goodies: the &lt;code&gt;effect()&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;code&gt;opponent&lt;/code&gt; object add:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;hurtAnimation: function() {
+  this.sprite.effect(&#39;shake&#39;);
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;While we&amp;rsquo;re at it, let&amp;rsquo;s make it disappear when its HP reaches zero. We&amp;rsquo;ll use another one of jQuery&amp;rsquo;s goodies called the &lt;code&gt;fadeOut()&lt;/code&gt; method. You can set how fast the sprite disappears; I&amp;rsquo;ll use &lt;code&gt;slow&lt;/code&gt; so that we can savor the victory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;faintedAnimation: function() {
+  this.sprite.fadeOut(&amp;quot;slow&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lastly, we&amp;rsquo;ll have our pokemon do a victory pose when the opponent&amp;rsquo;s HP reaches zero. (N-not because we&amp;rsquo;re happy to make pokemon faint or anything! Let&amp;rsquo;s not be sadists here.)&lt;/p&gt;
+
+&lt;p&gt;There are additional sprite assets we can use, so let&amp;rsquo;s just change the sprite image. Luckily we&amp;rsquo;ve already saved the path for this before in &lt;code&gt;trainer.altImg&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;victoryAnimation: function(){
+  this.sprite.attr(&#39;src&#39;, this.altImg);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Call these new functions in our &lt;code&gt;playerAttack()&lt;/code&gt;, like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function playerAttack(opponent, damage) {
+  opponent.hurtAnimation();
+  trainer.attack(opponent, damage);
+
+  if(opponent.hpRemaining &amp;lt;= 0){
+    dialogue.html(opponent.name.html() + &#39; fainted!&#39;);
+    opponent.faintedAnimation();
+    switchToMenu();
+    trainer.victoryAnimation();
+  }
+
+  else {
+    dialogue.html(opponent.name.html() + &#39; received &#39; + damage + &#39; damage!&#39;);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And lastly, let&amp;rsquo;s wrap this up by doing the other moves as well.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;fight.move2.img.click(function(){
+  playerAttack(opponent, trainer.move2.damage);
+  trainer.move2.remaining--;
+  fight.move2.pp.html(trainer.move2.remaining + &#39;/&#39; + trainer.move2.total);
+});
+
+fight.move3.img.click(function(){
+  playerAttack(opponent, trainer.move3.damage);
+  trainer.move3.remaining--;
+  fight.move3.pp.html(trainer.move3.remaining + &#39;/&#39; + trainer.move3.total);
+});
+
+fight.move4.img.click(function(){
+  playerAttack(opponent, trainer.move4.damage);
+  trainer.move4.remaining--;
+  fight.move4.pp.html(trainer.move4.remaining + &#39;/&#39; + trainer.move4.total);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reload the page. Now you can mercilessly attack a Ratata at your will, and even have your pokemon do a victory pose! Good job!&lt;/p&gt;
+
+&lt;h1 id=&#34;final-notes:51edb0bb45e55ba24d5b8a75643e295b&#34;&gt;Final Notes&lt;/h1&gt;
+
+&lt;p&gt;Whew! We&amp;rsquo;ve finally reached the end!. We&amp;rsquo;ve gone from printing a simple &amp;ldquo;Hello World!&amp;rdquo; in the console to making our very own Pokemon game! This was a lot to take in. If you made it this far, kudos! You&amp;rsquo;ve done a &lt;em&gt;very&lt;/em&gt; good job. Now step away from the screen and rest for a while. :P&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve only &lt;em&gt;barely&lt;/em&gt; scratched the surface of the magic that is javascript. There are so &lt;em&gt;so&lt;/em&gt; many more things that javascript can do and landscape for javascript is still evolving, but I&amp;rsquo;ll leave it to you to discover them. From here on you can use javascript in so many ways - from client-side to server-side programming; backend to frontend; and yes, even in game development! (Check out phaserJS for gamedev javasript).&lt;/p&gt;
+
+&lt;p&gt;Have fun coding!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux Installation Guide</title>
+      <link>/resources/linux_installation/</link>
+      <pubDate>Sun, 08 Feb 2015 16:20:02 +0800</pubDate>
+      
+      <guid>/resources/linux_installation/</guid>
+      <description>
+
+&lt;p&gt;This is a step-by-step guide for installing Linux on your machine via dual boot.&lt;/p&gt;
+
+&lt;h2 id=&#34;create-the-installation-disk:edafce778e50c51636ce6db385732fc7&#34;&gt;Create the Installation Disk&lt;/h2&gt;
+
+&lt;h3 id=&#34;download-your-preferred-linux-distro:edafce778e50c51636ce6db385732fc7&#34;&gt;Download Your Preferred Linux Distro&lt;/h3&gt;
+
+&lt;p&gt;Download the ISO file from the webpage of your preferred Linux distribution. Take note of the system requirements, and download the one appropriate for your machine.&lt;/p&gt;
+
+&lt;p&gt;Here are the download sites for some of the distributions:
+* &lt;a href=&#34;http://www.ubuntu.com/download&#34;&gt;Ubuntu&lt;/a&gt;
+* &lt;a href=&#34;http://www.linuxmint.com/download.php&#34;&gt;Linux Mint&lt;/a&gt;
+* &lt;a href=&#34;http://elementaryos.org&#34;&gt;elementary OS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are installing alongside Windows 8, you would need the 64-bit version in order to install correctly in EFI mode.&lt;/p&gt;
+
+&lt;h3 id=&#34;transfer-the-iso-file-to-your-installation-media:edafce778e50c51636ce6db385732fc7&#34;&gt;Transfer the ISO file to Your Installation Media&lt;/h3&gt;
+
+&lt;p&gt;You can either burn the ISO file on a blank CD or create a bootable USB on a spare USB with enough memory (~2GB). Ubuntu comes with its own application for creating the installation disk called Startup Disk Creator.&lt;/p&gt;
+
+&lt;h2 id=&#34;install-a-boot-manager-for-mac-os:edafce778e50c51636ce6db385732fc7&#34;&gt;Install a Boot Manager (for Mac OS)&lt;/h2&gt;
+
+&lt;p&gt;For Mac OS users, rEFind is a boot manager that allows you to choose which operating system to start your machine with. You can download rEFind &lt;a href=&#34;http://sourceforge.net/projects/refind/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After downloading, open a Terminal window and go to the directory where you downloaded rEFind. Run the following command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo ./install.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will install the rEFind boot manager on your Mac OS.&lt;/p&gt;
+
+&lt;p&gt;Note: Windows users need not download a new boot manager.&lt;/p&gt;
+
+&lt;h2 id=&#34;partitioning:edafce778e50c51636ce6db385732fc7&#34;&gt;Partitioning&lt;/h2&gt;
+
+&lt;p&gt;We need to allocate some space to make room for your Linux system. We will need two partitions: one for the root (this contains the kernel, boot files, system files, etc.), and one for the swap area (the memory used for hibernation and also when the RAM is full).&lt;/p&gt;
+
+&lt;p&gt;For the root, allocate at least 20 GB.&lt;/p&gt;
+
+&lt;p&gt;For the swap area, allocate around twice the size of your RAM.&lt;/p&gt;
+
+&lt;p&gt;Important Note: Be careful which paritions you are shrinking. Make sure that you select the partition of your hard drive or a partition with lots of space. DO NOT touch the boot manager or any of the important partitions. Remember to backup your files in case something goes wrong.&lt;/p&gt;
+
+&lt;h3 id=&#34;mac-os:edafce778e50c51636ce6db385732fc7&#34;&gt;Mac OS&lt;/h3&gt;
+
+&lt;p&gt;In Mac OS, you can partition using Disk Utility.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select the Partition tab on top. The Volume Scheme (left rectangle) shows the partitions in your machine. The ones shaded in blue represents the space already taken up by your machine, while the ones in white are the free space you can use.&lt;/li&gt;
+&lt;li&gt;You can add a partition by clicking the plus sign below the Volume Scheme. This will add another partition (another box) in the Volume Scheme. Click this new box and change the name, format, and size of the partition.&lt;/li&gt;
+&lt;li&gt;Once you&amp;rsquo;ve created the necessary partitions, click the Apply buttom on the bottom right and then select Partition.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For a more detailed guide on how to parition on a Mac, click &lt;a href=&#34;http://www.geek.com/apple/how-to-partition-a-mac-hard-drive-1482555/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;windows:edafce778e50c51636ce6db385732fc7&#34;&gt;Windows&lt;/h3&gt;
+
+&lt;p&gt;In Windows, you can use Disk Management from the Computer Management utility.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You should see a list of paritions (volumes) available in your machine. Right-click the volume you want to shrink and select &amp;ldquo;Shrink Volume&amp;hellip;&amp;rdquo; from the menu.&lt;/li&gt;
+&lt;li&gt;In the shrink dialog, enter the amount of the new partition. If there is not enough space to in the volume and there&amp;rsquo;s free space right beside it, you can choose the &amp;ldquo;Extend Volume&amp;hellip;&amp;rdquo; option to add more space. Note that this only works with contiguous space.&lt;/li&gt;
+&lt;li&gt;You should now see a box of Unallocated Space. Right click on this and select &amp;ldquo;New Simple Volume&amp;hellip;&amp;rdquo; to create a partition.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For a more detailed guide on how to parition on Windows, click &lt;a href=&#34;http://www.howtogeek.com/172580/how-to-create-a-separate-data-partition-for-windows/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-linux:edafce778e50c51636ce6db385732fc7&#34;&gt;Installing Linux&lt;/h2&gt;
+
+&lt;h3 id=&#34;efi-mode:edafce778e50c51636ce6db385732fc7&#34;&gt;EFI Mode&lt;/h3&gt;
+
+&lt;p&gt;UEFI (~EFI) is a firmware interface that has replaced the BIOS firmware in recent computers. When installing alongside Windows 8, you would need to disable a few features so that you can properly install in EFI mode.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First, &lt;a href=&#34;http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html&#34;&gt;disable FastStartup&lt;/a&gt; in Windows. After disabling the feature, make sure that you shutdown Windows properly so that it doesn&amp;rsquo;t save the state of your machine.&lt;/li&gt;
+&lt;li&gt;In the BIOS, disable FastBoot. If you run into any problems while installing, try disbaling Secure Boot as well.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please follow the &lt;a href=&#34;https://help.ubuntu.com/community/UEFI&#34;&gt;official guide&lt;/a&gt; for installing Ubuntu in EFI mode before proceeding with the next instructions. For troubleshooting, you may find additional (more detailed) instructions &lt;a href=&#34;http://askubuntu.com/questions/221835/installing-ubuntu-on-a-pre-installed-windows-8-64-bit-system-uefi-supported&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;booting-the-installation-disk:edafce778e50c51636ce6db385732fc7&#34;&gt;Booting the Installation Disk&lt;/h3&gt;
+
+&lt;p&gt;In order to install Linux, you must first boot your computer from the installation disk. Depending on the hardware, this process may differ between machines. However, the general process is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Insert the installation disk and then restart your machine.&lt;/li&gt;
+&lt;li&gt;Before the machine loads the pre-installed OS, press the appropriate function key to change the boot order. This is usually F12 or ESC for PC users and Option for Mac users, but it generally differs depending on the hardware so be sure to check which function key works for your machine.&lt;/li&gt;
+&lt;li&gt;Select the appropriate boot disk. If you choose the incorrect device, your machine will continue to boot as normal. Just restart and try again. If you are successful, your machine will proceed to the Installation Wizard of your Linux distro.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Follow the instructions until you are asked how you would like to install your Linux system. You will usually be presented with three options: &amp;ldquo;Replace Your Existing OS&amp;rdquo;, &amp;ldquo;Install Alongside Your OS&amp;rdquo;, or &amp;ldquo;Something Else&amp;rdquo;. Select the &amp;ldquo;Something Else&amp;rdquo; option.&lt;/p&gt;
+
+&lt;h3 id=&#34;setting-up-the-partitions:edafce778e50c51636ce6db385732fc7&#34;&gt;Setting Up the Partitions&lt;/h3&gt;
+
+&lt;p&gt;Select the partitions you created before.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For the root partition, choose to use it as an Ext4 journaling file system and select &lt;code&gt;/&lt;/code&gt; as its mounting point.&lt;/li&gt;
+&lt;li&gt;For the swap partition, choose to use it as a swap area.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find a more detailed guide for setting up the partitions &lt;a href=&#34;http://askubuntu.com/questions/343268/how-to-use-manual-partitioning-during-installation&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Afterwards, follow the remaining instructions for setting up and installing Linux. Then restart your machine.&lt;/p&gt;
+
+&lt;h2 id=&#34;network-configuration:edafce778e50c51636ce6db385732fc7&#34;&gt;Network Configuration&lt;/h2&gt;
+
+&lt;p&gt;Check if your machine detects wireless networks. If not, connect to the internet via wired connection (such as ethernet) and download the Broadcom STA driver. In elementary OS, you can do this by accessing System Settings &amp;gt; Additional Drivers.&lt;/p&gt;
+
+&lt;h2 id=&#34;update-your-system:edafce778e50c51636ce6db385732fc7&#34;&gt;Update Your System&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get update &amp;amp;&amp;amp; apt-get upgrade
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
