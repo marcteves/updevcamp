@@ -77,11 +77,9 @@ To understand python more, feel free to peruse this [tutorial](/resources/python
 
 Now that you have a good understanding of python, let's try using it to generate web content.
 
-{{% notice %}}
 ### Notice: You can grab this week's distribution code here: https://github.com/Secretmapper/updevcamp-session-2-dist
 
 ### You can click the "Download ZIP" button to download the files.
-{{% /notice %}}
 
 ## Forms and CGI
 

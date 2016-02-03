@@ -8,9 +8,7 @@ notable = true
 
 +++
 
-{{% notice %}}
 ### Due to time constraints, we haven't fully discussed SQL and databases yet in our last DevCamp Session. Please consult any of the Staff through Slack/Facebook if you have any questions.*
-{{% /notice %}}
 
 \*__We've compressed something that was regularly discussed for about 3-4 sessions into one__
 
@@ -52,11 +50,7 @@ Let's go ahead and take a look at the code you've cloned.
 
 Navigate over to the distribution code. You'll note that there are a couple of top level files.
 
-{{% notice info %}}
-
 ### You can see a live demo of the [site here](http://csitwit.herokuapp.com/). Go ahead and play around with it, so that you'll have an idea of what you're about to create!
-
-{{% /notice %}}
 
 ## \__init__.py
 
